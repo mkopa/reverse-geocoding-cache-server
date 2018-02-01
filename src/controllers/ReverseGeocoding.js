@@ -4,11 +4,14 @@ const geocoder = NodeGeocoder(settings.geocoderOptions);
 
 class ReverseGeocodingController {
   static getGeocoding(req, res, next) {
-    geocoder.reverse({lat: 53.096597, lon: 23.117618})
-      .then(function(geo) {
-        res.json(geo);
+    const latLong = req.query.LatLong.split(' ').join('').split(',');
+    const lat = latLong[0];
+    const lon = latLong[1];
+    geocoder.reverse({ lat, lon })
+      .then((geo) => {
+        res.jsonOk(geo);
       })
-      .catch(function(err) {
+      .catch((err) => {
         res.status(500).json(err);
       });
   }
