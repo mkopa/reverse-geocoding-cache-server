@@ -1,0 +1,27 @@
+{
+  "name": "reverse-geocoding-cache-server",
+  "version": "1.0.0",
+  "description": "Google Reverse Geocoding cache server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkopa/reverse-geocoding-cache-server.git"
+  },
+  "author": "Marcin Kopa",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mkopa/reverse-geocoding-cache-server/issues"
+  },
+  "homepage": "https://github.com/mkopa/reverse-geocoding-cache-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.10.0",
+    "mongoose": "^5.0.3",
+    "node-geocoder": "^3.21.1"
+  }
+}
