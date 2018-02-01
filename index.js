@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bluebird = require('bluebird');
 const cors = require('cors');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
@@ -9,10 +10,15 @@ const { catchErrors, jsonOk } = require('./src/middlewares');
 const appRouter = require('./src/routers');
 const { settings } = require('./src/config');
 
+// setup database
+mongoose.Promise = bluebird;
+mongoose.connect(settings.mongo.url);
+mongoose.set('debug', settings.mongo.debug);
+
 // create application
 const app = express();
 
-// Connect main middlewares
+// connect main middlewares
 app.use(helmet());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
