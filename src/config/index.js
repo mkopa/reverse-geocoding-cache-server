@@ -12,6 +12,7 @@ const settings = {
     // apiKey: 'YOUR_API_KEY', // for Mapquest, OpenCage, Google Premier
     formatter: null         // 'gpx', 'string', ...
   },
+  logDirectory: './log',
 };
 
 module.exports = { settings };
